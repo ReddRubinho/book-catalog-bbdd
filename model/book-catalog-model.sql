@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS `book`;
 
 CREATE TABLE `book` (
 book_id int NOT NULL AUTO_INCREMENT,
-isbn int NOT NULL,
+isbn varchar(24) NOT NULL,
 title varchar(100) NOT NULL,
 authors varchar(200) NOT NULL,
 publisher varchar(100) NOT NULL,
@@ -33,11 +33,12 @@ DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user`(
 user_id int NOT NULL AUTO_INCREMENT,
+username varchar(320) NOT NULL,
+user_password varchar(16) NOT NULL,
 category varchar(20) DEFAULT 'flat' NOT NULL,
 mail varchar(320) NOT NULL,
-username varchar(320) NOT NULL,
 user_image varchar(1000),
-PRIMARY KEY(`user_id`)
+PRIMARY KEY(`user_id`, `username`)
 );
 
 --
